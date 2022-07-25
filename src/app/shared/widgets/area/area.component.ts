@@ -11,6 +11,8 @@ import HC_exporting from 'highcharts/modules/exporting';
 export class AreaComponent implements OnInit {
 
   chartOptions: {};
+  chartOptions1: {};
+
   @Input() data: any = [];
 
   Highcharts = Highcharts;
@@ -23,14 +25,13 @@ export class AreaComponent implements OnInit {
         type: 'area'
       },
       title: {
-        text: 'Random DATA'
+        text: ' Top 10 Application Usage per last hour'
       },
       subtitle: {
-        text: 'Demo'
+        text: ''
       },
       tooltip: {
         split: true,
-        valueSuffix: ' millions'
       },
       credits: {
         enabled: false
@@ -40,6 +41,7 @@ export class AreaComponent implements OnInit {
       },
       series: this.data
     };
+
 
     HC_exporting(Highcharts);
 
